@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="water-physics" basedir="." default="build">
+	<property name="build" value="build"/>
+
+	<property name="src" value="src"/>
+	<property name="lib" value="lib"/>
+	<property name="res" value="res"/>
+
+	<available file="${build}" property="outputExists"/>
+
+	<target name="clean" description="remove all generated artifacts" if="outputExists">
+		<delete dir="${build}" includeEmptyDirs="true"/>
+	</target>
+
+	<target name="init" description="create the output directories" unless="outputExists">
+		<mkdir dir="${build}"/>
+	</target>
+
+	<target name="compile" description="compile the source" depends="init">
+		<javac srcdir="${src}" destdir="${build}"/>
+	</target>
+
+	<target name="build" description="jar the distro" depends="compile">
+		<jar jarfile="water-physics.jar" basedir="${build}"/>
+	</target>
+</project>
