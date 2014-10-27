@@ -1,3 +1,3 @@
 Water Physics
 ====
-Blind reverse engineering of a project shown me by George Vorobyev (@quaffle97)
+Blind reverse engineering of a project shown me by [George Vorobyev](https://github.com/quaffle97)
