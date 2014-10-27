@@ -21,6 +21,10 @@
 	</target>
 
 	<target name="build" description="jar the distro" depends="compile">
-		<jar jarfile="water-physics.jar" basedir="${build}"/>
+		<jar jarfile="water-physics.jar" basedir="${build}">
+			<manifest>
+				<attribute name="Main-Class" value="WaterPhysicsSimulator"/>
+			</manifest>
+		</jar>
 	</target>
 </project>
