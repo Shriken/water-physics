@@ -1,17 +1,18 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class UI {
 
 	private Simulation sim;
-	private ArrayList<UIEvent> events;
+	private LinkedList<UIEvent> events;
 
 	public UI(Simulation sim) {
 		this.sim = sim;
+		events = new LinkedList<UIEvent>();
 	}
 
 	public UIEvent getEvent() {
-		// TODO write UI.getEvent()
-		return null;
+		return events.poll();
 	}
 
 	public void render() {
