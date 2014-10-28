@@ -6,10 +6,13 @@
 	<property name="lib" value="lib"/>
 	<property name="res" value="res"/>
 
+	<property name="jar" value="water-physics.jar"/>
+
 	<available file="${build}" property="outputExists"/>
 
 	<target name="clean" description="remove all generated artifacts" if="outputExists">
 		<delete dir="${build}" includeEmptyDirs="true"/>
+		<delete file="${jar}"/>
 	</target>
 
 	<target name="init" description="create the output directories" depends="clean">
@@ -21,7 +24,7 @@
 	</target>
 
 	<target name="build" description="jar the distro" depends="compile">
-		<jar jarfile="water-physics.jar" basedir="${build}">
+		<jar jarfile="${jar}" basedir="${build}">
 			<manifest>
 				<attribute name="Main-Class" value="Simulator"/>
 			</manifest>
@@ -29,6 +32,6 @@
 	</target>
 
 	<target name="run" description="run the jarfile">
-		<java jar="water-physics.jar" fork="true"/>
+		<java jar="${jar}" fork="true"/>
 	</target>
 </project>
