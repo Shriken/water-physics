@@ -19,6 +19,7 @@ public class UI {
 
 	private JFrame frame;
 	private Canvas screen;
+	private byte[][] widgetIDs;
 
 	public UI(Simulation sim) {
 		this.sim = sim;
@@ -47,6 +48,18 @@ public class UI {
 
 	private void initWidgets() {
 		// TODO add widgets to UI
+	}
+
+	private void addWidget(UIWidget widget) {
+		widgets.add(widget);
+		int id = widgets.length; // leave 0 for unassigned
+
+		// fill widget rect with widget id
+		for (int i = widget.y; i < widget.y + widget.height; i++) {
+			for (int j = widget.x; j < widget.x + widget.width; j++) {
+				widgetIDs[i][j] = id;
+			}
+		}
 	}
 
 	public UIEvent getEvent() {
