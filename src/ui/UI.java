@@ -5,10 +5,12 @@ import java.awt.Canvas;
 import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.image.BufferStrategy;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
 
-public class UI {
+public class UI implements MouseListener {
 
 	private static final int CANVAS_WIDTH = 640;
 	private static final int CANVAS_HEIGHT = 480;
@@ -32,6 +34,7 @@ public class UI {
 		screen.setMinimumSize(size);
 		screen.setMaximumSize(size);
 		screen.setPreferredSize(size);
+		screen.addMouseListener(this);
 
 		// initialize the frame
 		frame = new JFrame("Water Physics Simulator");
@@ -80,4 +83,13 @@ public class UI {
 		bs.show();
 		g.dispose();
 	}
+
+	public void mouseClicked(MouseEvent e) {
+		System.out.println("Click!");
+	}
+
+	public void mouseEntered(MouseEvent e) {}
+	public void mouseExited(MouseEvent e) {}
+	public void mousePressed(MouseEvent e) {}
+	public void mouseReleased(MouseEvent e) {}
 }
