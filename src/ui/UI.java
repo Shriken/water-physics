@@ -78,7 +78,7 @@ public class UI implements MouseListener {
 		return events.poll();
 	}
 
-	public UIEvent addEvent(UIEvent e) {
+	public void addEvent(UIEvent e) {
 		events.offer(e);
 	}
 
