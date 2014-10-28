@@ -37,6 +37,16 @@ public class UI {
 		frame.add(screen);
 		frame.pack();
 		frame.setVisible(true);
+
+		// create buffer strategy (after showing frame)
+		screen.createBufferStrategy(2);
+
+		// initialize the widgets
+		initWidgets();
+	}
+
+	private void initWidgets() {
+		// TODO add widgets to UI
 	}
 
 	public UIEvent getEvent() {
@@ -44,6 +54,17 @@ public class UI {
 	}
 
 	public void render() {
-		// TODO write UI.render()
+		// get draw graphics
+		BufferStrategy bs = screen.getBufferStrategy();
+		Graphics g = bs.getDrawGraphics();
+
+		// draw each widget
+		for (UIWidget widget : widgets) {
+			widget.render(g);
+		}
+
+		// clean up
+		bs.show();
+		g.dispose();
 	}
 }
