@@ -12,7 +12,7 @@
 		<delete dir="${build}" includeEmptyDirs="true"/>
 	</target>
 
-	<target name="init" description="create the output directories" unless="outputExists">
+	<target name="init" description="create the output directories" depends="clean">
 		<mkdir dir="${build}"/>
 	</target>
 
@@ -23,7 +23,7 @@
 	<target name="build" description="jar the distro" depends="compile">
 		<jar jarfile="water-physics.jar" basedir="${build}">
 			<manifest>
-				<attribute name="Main-Class" value="WaterPhysicsSimulator"/>
+				<attribute name="Main-Class" value="Simulator"/>
 			</manifest>
 		</jar>
 	</target>
