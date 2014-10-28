@@ -10,8 +10,8 @@ import javax.swing.JFrame;
 
 public class UI {
 
-	private static final int WIDTH = 640;
-	private static final int HEIGHT = 480;
+	private static final int CANVAS_WIDTH = 640;
+	private static final int CANVAS_HEIGHT = 480;
 
 	private Simulation sim;
 	private LinkedList<UIEvent> events;
@@ -27,7 +27,7 @@ public class UI {
 
 		// initialize the screen canvas
 		screen = new Canvas();
-		Dimension size = new Dimension(WIDTH, HEIGHT);
+		Dimension size = new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT);
 		screen.setMinimumSize(size);
 		screen.setMaximumSize(size);
 		screen.setPreferredSize(size);
