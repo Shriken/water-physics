@@ -50,6 +50,7 @@ public class UI implements MouseListener {
 	}
 
 	private void initWidgets() {
+		widgetIDs = new byte[CANVAS_HEIGHT][CANVAS_WIDTH];
 		// TODO add widgets to UI
 	}
 
@@ -88,6 +89,17 @@ public class UI implements MouseListener {
 
 	public void mouseClicked(MouseEvent e) {
 		System.out.println("Click!");
+
+		// get id of clicked widget
+		byte id = widgetIDs[e.getY()][e.getX()];
+		if (id == 0) return; // if no widget, return
+
+		// translate event into clickedWidget's context
+		UIWidget clickedWidget = widgets.get(id);
+		e.translatePoint(clickedWidget.getX(), clickedWidget.getY());
+
+		// pass event to clickedWidget
+		clickedWidget.mouseClicked(e);
 	}
 
 	public void mouseEntered(MouseEvent e) {}

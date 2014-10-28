@@ -1,4 +1,5 @@
 import java.awt.Graphics;
+import java.awt.event.MouseEvent;
 
 public abstract class UIWidget {
 
@@ -21,4 +22,5 @@ public abstract class UIWidget {
 	public int getHeight() { return height; }
 
 	public abstract void render(Graphics g);
+	public abstract void mouseClicked(MouseEvent e);
 }
