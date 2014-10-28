@@ -1,7 +1,11 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
+
 import java.awt.Canvas;
+import java.awt.Graphics;
 import java.awt.Dimension;
+import java.awt.image.BufferStrategy;
+
 import javax.swing.JFrame;
 
 public class UI {
