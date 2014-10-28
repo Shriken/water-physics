@@ -52,7 +52,7 @@ public class UI {
 
 	private void addWidget(UIWidget widget) {
 		widgets.add(widget);
-		int id = widgets.length; // leave 0 for unassigned
+		byte id = (byte)widgets.size(); // leave 0 for unassigned
 
 		// fill widget rect with widget id
 		for (int i = widget.y; i < widget.y + widget.height; i++) {
