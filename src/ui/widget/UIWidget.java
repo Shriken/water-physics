@@ -12,13 +12,15 @@ public abstract class UIWidget {
 	private final int width, height;
 
 	private Simulation sim;
+	private UI parent;
 
-	public UIWidget(int x, int y, int width, int height, Simulation sim) {
+	public UIWidget(int x, int y, int width, int height, UI parent) {
 		this.x = x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
-		this.sim = sim;
+		this.sim = parent.sim;
+		this.parent = parent;
 	}
 
 	public int getX() { return x; }

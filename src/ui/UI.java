@@ -20,7 +20,8 @@ public class UI implements MouseListener {
 	private static final int CANVAS_WIDTH = 640;
 	private static final int CANVAS_HEIGHT = 480;
 
-	private Simulation sim;
+	public Simulation sim;
+
 	private LinkedList<UIEvent> events;
 	private ArrayList<UIWidget> widgets;
 
