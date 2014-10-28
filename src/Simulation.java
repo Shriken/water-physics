@@ -1,4 +1,4 @@
-package me.zanesterling;
+package WaterPhysics;
 
 public class Simulation {
 

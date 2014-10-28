@@ -1,7 +1,7 @@
-package me.zanesterling;
+package WaterPhysics;
 
-import me.zanesterling.ui.UI;
-import me.zanesterling.ui.UIEvent;
+import WaterPhysics.ui.UI;
+import WaterPhysics.ui.UIEvent;
 
 public class Simulator {
 

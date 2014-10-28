@@ -1,7 +1,7 @@
-package me.zanesterling.ui;
+package WaterPhysics.ui;
 
-import me.zanesterling.Simulation;
-import me.zanesterling.ui.widget.UIWidget;
+import WaterPhysics.Simulation;
+import WaterPhysics.ui.widget.UIWidget;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

@@ -1,7 +1,7 @@
-package me.zanesterling.ui.widget;
+package WaterPhysics.ui.widget;
 
-import me.zanesterling.Simulation;
-import me.zanesterling.ui.UI;
+import WaterPhysics.Simulation;
+import WaterPhysics.ui.UI;
 
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;

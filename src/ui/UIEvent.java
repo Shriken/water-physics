@@ -1,4 +1,4 @@
-package me.zanesterling.ui;
+package WaterPhysics.ui;
 
 public class UIEvent {
 
