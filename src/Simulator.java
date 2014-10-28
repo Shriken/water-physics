@@ -1,3 +1,8 @@
+package me.zanesterling;
+
+import me.zanesterling.ui.UI;
+import me.zanesterling.ui.UIEvent;
+
 public class Simulator {
 
 	Simulation sim;

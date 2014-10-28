@@ -1,3 +1,5 @@
+package me.zanesterling;
+
 public class Simulation {
 
 	private final int width, height;

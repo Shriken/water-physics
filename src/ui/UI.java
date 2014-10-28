@@ -1,3 +1,8 @@
+package me.zanesterling.ui;
+
+import me.zanesterling.Simulation;
+import me.zanesterling.ui.widget.UIWidget;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 
