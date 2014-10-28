@@ -21,12 +21,14 @@ public class UI {
 		events = new LinkedList<UIEvent>();
 		widgets = new ArrayList<UIWidget>();
 
-		Dimension size = new Dimension(WIDTH, HEIGHT);
+		// initialize the screen canvas
 		screen = new Canvas();
+		Dimension size = new Dimension(WIDTH, HEIGHT);
 		screen.setMinimumSize(size);
 		screen.setMaximumSize(size);
 		screen.setPreferredSize(size);
 
+		// initialize the frame
 		frame = new JFrame("Water Physics Simulator");
 		frame.add(screen);
 		frame.pack();
