@@ -2,8 +2,8 @@ import java.awt.Graphics;
 
 public abstract class UIWidget {
 
-	final int x, y;
-	final int width, height;
+	private final int x, y;
+	private final int width, height;
 
 	private Simulation sim;
 
@@ -14,6 +14,11 @@ public abstract class UIWidget {
 		this.height = height;
 		this.sim = sim;
 	}
+
+	public int getX() { return x; }
+	public int getY() { return y; }
+	public int getWidth()  { return width;  }
+	public int getHeight() { return height; }
 
 	public abstract void render(Graphics g);
 }

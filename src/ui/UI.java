@@ -58,9 +58,11 @@ public class UI implements MouseListener {
 		byte id = (byte)widgets.size(); // leave 0 for unassigned
 
 		// fill widget rect with widget id
-		for (int i = widget.y; i < widget.y + widget.height; i++) {
-			for (int j = widget.x; j < widget.x + widget.width; j++) {
-				widgetIDs[i][j] = id;
+		int wx = widget.getX();
+		int wy = widget.getY();
+		for (int i = 0; i < widget.getHeight(); i++) {
+			for (int j = 0; j < widget.getWidth(); j++) {
+				widgetIDs[i + wx][j + wy] = id;
 			}
 		}
 	}
