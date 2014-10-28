@@ -15,7 +15,7 @@ public class Simulator {
 
 		while (running) {
 			// check UI for ui events
-			for (UIEvent e = ui.getEvent(); e != null; e = ui.getEvent()) {
+			for (UIEvent e; (e = ui.getEvent()) != null;) {
 				processEvent(e);
 			}
 
