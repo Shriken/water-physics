@@ -1,15 +1,19 @@
 import java.awt.Graphics;
 
-public class UIWidget {
+public abstract class UIWidget {
 
+	final int x, y;
 	final int width, height;
 
-	public UIWidget(int width, int height) {
+	private Simulation sim;
+
+	public UIWidget(int x, int y, int width, int height, Simulation sim) {
+		this.x = x;
+		this.y = y;
 		this.width = width;
 		this.height = height;
+		this.sim = sim;
 	}
 
-	public void render(Graphics g) {
-		// TODO write UIWidget.render()
-	}
+	public abstract void render(Graphics g);
 }
