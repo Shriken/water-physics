@@ -78,6 +78,10 @@ public class UI implements MouseListener {
 		return events.poll();
 	}
 
+	public UIEvent addEvent(UIEvent e) {
+		events.offer(e);
+	}
+
 	public void render() {
 		// get draw graphics
 		BufferStrategy bs = screen.getBufferStrategy();
