@@ -27,4 +27,8 @@
 			</manifest>
 		</jar>
 	</target>
+
+	<target name="run" description="run the jarfile">
+		<java jar="water-physics.jar" fork="true"/>
+	</target>
 </project>
