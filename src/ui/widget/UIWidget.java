@@ -8,11 +8,11 @@ import java.awt.event.MouseEvent;
 
 public abstract class UIWidget {
 
-	private final int x, y;
-	private final int width, height;
+	protected final int x, y;
+	protected final int width, height;
 
-	private Simulation sim;
-	private UI parent;
+	protected Simulation sim;
+	protected UI parent;
 
 	public UIWidget(int x, int y, int width, int height, UI parent) {
 		this.x = x;
