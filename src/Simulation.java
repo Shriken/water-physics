@@ -16,4 +16,7 @@ public class Simulation {
 	public void update() {
 		// TODO write Simulation.update()
 	}
+
+	public int getWidth()  { return width; }
+	public int getHeight() { return height; }
 }
