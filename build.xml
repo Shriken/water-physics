@@ -6,6 +6,7 @@
 	<property name="lib" value="lib"/>
 	<property name="res" value="res"/>
 
+	<property name="pkg" value="WaterPhysics"/>
 	<property name="jar" value="water-physics.jar"/>
 
 	<available file="${build}" property="outputExists"/>
@@ -26,7 +27,7 @@
 	<target name="build" description="jar the distro" depends="compile">
 		<jar jarfile="${jar}" basedir="${build}">
 			<manifest>
-				<attribute name="Main-Class" value="Simulator"/>
+				<attribute name="Main-Class" value="${pkg}.Simulator"/>
 			</manifest>
 		</jar>
 	</target>
