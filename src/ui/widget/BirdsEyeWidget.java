@@ -2,6 +2,7 @@ package WaterPhysics.ui.widget;
 
 import WaterPhysics.ui.UI;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 
@@ -10,6 +11,8 @@ public class BirdsEyeWidget extends UIWidget {
 	double displayScale;
 	int displayX;
 	int displayY;
+	int displayWidth;
+	int displayHeight;
 
 	public BirdsEyeWidget(int x, int y, int width, int height,
 	                      UI parent) {
@@ -24,22 +27,26 @@ public class BirdsEyeWidget extends UIWidget {
 			// simulation is skinny
 			displayScale = height / sim.getHeight();
 
-			displayX = 0.5 * (width - sim.getWidth());
+			displayX = (int) (0.5 * (width - sim.getWidth() *
+			                  displayScale));
 			displayY = 0;
 		} else {
 			// simulation is wide
 			displayScale = width / sim.getWidth();
 
 			displayX = 0;
-			displayY = 0.5 * (height - sim.getHeight());
+			displayY = (int) (0.5 * (height - sim.getHeight() *
+			                  displayScale));
 		}
+		displayWidth = (int) (sim.getWidth() * displayScale);
+		displayHeight = (int) (sim.getHeight() * displayScale);
 	}
 
 	// transform a point in the simulation into the display
 	public int[] simToDisplay(int x, int y) {
 		int[] out = new int[2];
-		out[0] = displayX + displayScale * x;
-		out[1] = displayY + displayScale * y;
+		out[0] = displayX + (int) (displayScale * x);
+		out[1] = displayY + (int) (displayScale * y);
 
 		return out;
 	}
@@ -50,6 +57,7 @@ public class BirdsEyeWidget extends UIWidget {
 	}
 
 	public void render(Graphics g) {
-		// TODO implement BirdsEyeWidget.render()
+		g.setColor(Color.RED);
+		g.fillRect(displayX, displayY, displayWidth, displayHeight);
 	}
 }
