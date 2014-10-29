@@ -71,9 +71,11 @@ public class UI implements MouseListener {
 		// fill widget rect with widget id
 		int wx = widget.getX();
 		int wy = widget.getY();
-		for (int i = 0; i < widget.getHeight(); i++) {
-			for (int j = 0; j < widget.getWidth(); j++) {
-				widgetIDs[i + wx][j + wy] = id;
+		int hMax = Math.min(widget.getHeight(), CANVAS_HEIGHT - wy);
+		int wMax = Math.min(widget.getWidth(),  CANVAS_WIDTH  - wy);
+		for (int i = 0; i < hMax; i++) {
+			for (int j = 0; j < wMax; j++) {
+				widgetIDs[i + wy][j + wx] = id;
 			}
 		}
 	}
