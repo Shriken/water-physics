@@ -2,6 +2,7 @@ package WaterPhysics.ui;
 
 import WaterPhysics.Simulation;
 import WaterPhysics.ui.widget.UIWidget;
+import WaterPhysics.ui.widget.BirdsEyeWidget;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -57,6 +58,9 @@ public class UI implements MouseListener {
 
 	private void initWidgets() {
 		widgetIDs = new byte[CANVAS_HEIGHT][CANVAS_WIDTH];
+
+		addWidget(new BirdsEyeWidget(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT,
+		          this));
 		// TODO add widgets to UI
 	}
 
