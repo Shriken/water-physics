@@ -89,7 +89,10 @@ public class UI implements MouseListener {
 
 		// draw each widget
 		for (UIWidget widget : widgets) {
+			// translate graphics into widget space
+			g.translate(widget.getX(), widget.getY());
 			widget.render(g);
+			g.translate(-widget.getX(), -widget.getY());
 		}
 
 		// clean up
