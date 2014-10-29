@@ -25,14 +25,14 @@ public class BirdsEyeWidget extends UIWidget {
 		// set the scale for the display to fit in the widget
 		if (simAR > dispAR) {
 			// simulation is skinny
-			displayScale = height / sim.getHeight();
+			displayScale = 1d * height / sim.getHeight();
 
 			displayX = (int) (0.5 * (width - sim.getWidth() *
 			                  displayScale));
 			displayY = 0;
 		} else {
 			// simulation is wide
-			displayScale = width / sim.getWidth();
+			displayScale = 1d * width / sim.getWidth();
 
 			displayX = 0;
 			displayY = (int) (0.5 * (height - sim.getHeight() *
