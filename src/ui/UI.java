@@ -111,10 +111,9 @@ public class UI implements MouseListener {
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("Click!");
-
 		// get id of clicked widget
 		byte id = widgetIDs[e.getY()][e.getX()];
+		System.out.println("Click on widget " + id);
 		if (id == 0) return; // if no widget, return
 
 		// translate event into clickedWidget's context

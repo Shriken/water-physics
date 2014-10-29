@@ -57,7 +57,10 @@ public class BirdsEyeWidget extends UIWidget {
 	}
 
 	public void render(Graphics g) {
-		g.setColor(Color.RED);
+		g.setColor(new Color(230, 230, 230));
 		g.fillRect(displayX, displayY, displayWidth, displayHeight);
+
+		g.setColor(Color.BLACK);
+		g.drawRect(0, 0, width, height);
 	}
 }
