@@ -108,7 +108,7 @@ public class UI implements MouseListener {
 		if (id == 0) return; // if no widget, return
 
 		// translate event into clickedWidget's context
-		UIWidget clickedWidget = widgets.get(id);
+		UIWidget clickedWidget = widgets.get(id - 1);
 		e.translatePoint(clickedWidget.getX(), clickedWidget.getY());
 
 		// pass event to clickedWidget
