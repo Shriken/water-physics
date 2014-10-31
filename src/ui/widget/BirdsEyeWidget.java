@@ -1,6 +1,7 @@
 package WaterPhysics.ui.widget;
 
 import WaterPhysics.ui.UI;
+import WaterPhysics.ui.UIEvent;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -53,7 +54,12 @@ public class BirdsEyeWidget extends UIWidget {
 
 	public void mouseClicked(MouseEvent e) {
 		System.out.println("BirdsEyeWidget clicked!");
-		// TODO implement BirdsEyeWidget.mouseClicked()
+
+		int x = (e.getX() - displayX) / ((int) displayScale);
+		int y = (e.getY() - displayY) / ((int) displayScale);
+
+		UIEvent uie = new UIEvent("height-update");
+		parent.addEvent(uie);
 	}
 
 	public void render(Graphics g) {
