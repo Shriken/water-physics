@@ -57,8 +57,19 @@ public class BirdsEyeWidget extends UIWidget {
 	}
 
 	public void render(Graphics g) {
-		g.setColor(new Color(230, 230, 230));
-		g.fillRect(displayX, displayY, displayWidth, displayHeight);
+		int simW = sim.getWidth();
+		int simH = sim.getHeight();
+
+		for (int i = 0; i < simH; i++) {
+			for (int j = 0; j < simW; j++) {
+				double height = sim.getHeightAt(j, i);
+				int brt = (int) (Math.atan(height) * 255 / Math.PI) + 128;
+				g.setColor(new Color(brt, brt, brt));
+				g.fillRect(displayX + (int) (displayScale * j),
+				           displayY + (int) (displayScale * i),
+				           (int) displayScale, (int) displayScale);
+			}
+		}
 
 		g.setColor(Color.BLACK);
 		g.drawRect(0, 0, width, height);
