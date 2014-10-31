@@ -62,8 +62,10 @@ public class BirdsEyeWidget extends UIWidget {
 
 		for (int i = 0; i < simH; i++) {
 			for (int j = 0; j < simW; j++) {
-				double height = sim.getHeightAt(j, i);
+				// find the tile's color based on the height
+				double height = sim.getZ(j, i);
 				int brt = (int) (Math.atan(height) * 255 / Math.PI) + 128;
+
 				g.setColor(new Color(brt, brt, brt));
 				g.fillRect(displayX + (int) (displayScale * j),
 				           displayY + (int) (displayScale * i),

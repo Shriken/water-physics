@@ -25,7 +25,9 @@ public class Simulation {
 	public int getWidth()  { return width; }
 	public int getHeight() { return height; }
 
-	public double getHeightAt(int x, int y) {
+	public double getZ(int x, int y) {
+		if (x < 0 || width  <= x) return 0;
+		if (y < 0 || height <= y) return 0;
 		return heights[y][x];
 	}
 
