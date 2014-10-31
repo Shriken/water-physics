@@ -46,4 +46,8 @@ public class Simulation {
 	public double[] getFlowsAt(int x, int y) {
 		return flows[y][x];
 	}
+
+	public void setZ(int x, int y, int z) {
+		heights[y][x] = z;
+	}
 }
