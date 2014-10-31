@@ -117,7 +117,7 @@ public class UI implements MouseListener {
 
 		// translate event into clickedWidget's context
 		UIWidget clickedWidget = widgets.get(id - 1);
-		e.translatePoint(clickedWidget.getX(), clickedWidget.getY());
+		e.translatePoint(-clickedWidget.getX(), -clickedWidget.getY());
 
 		// pass event to clickedWidget
 		clickedWidget.mouseClicked(e);
