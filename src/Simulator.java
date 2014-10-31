@@ -35,6 +35,10 @@ public class Simulator {
 			ui.render();
 
 			long endTime = System.currentTimeMillis();
+
+			if (endTime - startTime > TICK_LEN) continue;
+
+			// if the tick took less time than TICK_LEN to run, sleep
 			try {
 				Thread.sleep(TICK_LEN - (endTime - startTime));
 			} catch (Exception e) {
