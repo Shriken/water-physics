@@ -65,7 +65,6 @@ public class UI implements MouseListener {
 		          CANVAS_WIDTH * 5 / 8, CANVAS_HEIGHT / 2, this));
 		addWidget(new BirdsEyeWidget(0, CANVAS_HEIGHT / 2, CANVAS_WIDTH,
 		          CANVAS_HEIGHT / 2, this));
-		// TODO add widgets to UI
 	}
 
 	private void addWidget(UIWidget widget) {
