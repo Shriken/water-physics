@@ -2,9 +2,9 @@ package WaterPhysics.ui;
 
 public class UIEvent {
 
-	String eventType;
-	int[]    iargs;
-	double[] dargs;
+	public String eventType;
+	public int[]    iargs;
+	public double[] dargs;
 
 	public UIEvent(String eventType, int[] iargs, double[] dargs) {
 		this.eventType = eventType;

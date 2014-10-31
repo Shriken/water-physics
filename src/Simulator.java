@@ -49,7 +49,9 @@ public class Simulator {
 	}
 
 	public void processEvent(UIEvent e) {
-		// TODO write Simulator.processEvent
+		if (e.eventType.equals("height-update")) {
+			sim.setZ(e.iargs[0], e.iargs[1], 1000);
+		}
 	}
 
 	public static void main(String[] args) {
