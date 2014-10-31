@@ -29,7 +29,7 @@ public class Simulation {
 		return heights[y][x];
 	}
 
-	public double getFlowsAt(int x, int y) {
+	public double[] getFlowsAt(int x, int y) {
 		return flows[y][x];
 	}
 }
