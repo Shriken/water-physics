@@ -19,7 +19,19 @@ public class Simulation {
 	}
 
 	public void update() {
-		// TODO write Simulation.update()
+		double[][] newHeights = new double[height][width];
+
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++) {
+				double corners = (getZ(i-1, j-1) + getZ(i+1, j-1) +
+				                  getZ(i+1, j+1) + getZ(i-1, j+1)) / 16;
+				double sides   = (getZ(i, j-1) + getZ(i+1, j) +
+				                  getZ(i, j+1) + getZ(i-1, j)) / 8;
+				newHeights[i][j] = corners + sides + heights[i][j] / 4;
+			}
+		}
+
+		heights = newHeights;
 	}
 
 	public int getWidth()  { return width; }
