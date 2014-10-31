@@ -5,6 +5,8 @@ import WaterPhysics.ui.UIEvent;
 
 public class Simulator {
 
+	static final long TICK_LEN = 1000 / 60; // 60 FPS
+
 	Simulation sim;
 	UI ui;
 
@@ -19,6 +21,8 @@ public class Simulator {
 		running = true;
 
 		while (running) {
+			long startTime = System.currentTimeMillis();
+
 			// check UI for ui events
 			for (UIEvent e; (e = ui.getEvent()) != null;) {
 				processEvent(e);
@@ -29,6 +33,14 @@ public class Simulator {
 
 			// tell ui to render simulation
 			ui.render();
+
+			long endTime = System.currentTimeMillis();
+			try {
+				Thread.sleep(TICK_LEN - (endTime - startTime));
+			} catch (Exception e) {
+				e.printStackTrace();
+				break;
+			}
 		}
 	}
 
