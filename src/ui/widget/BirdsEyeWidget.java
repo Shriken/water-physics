@@ -10,6 +10,8 @@ import java.awt.event.MouseEvent;
 public class BirdsEyeWidget extends UIWidget {
 
 	double displayScale;
+
+	// the location and dimensions of the display within the widget
 	int displayX;
 	int displayY;
 	int displayWidth;
