@@ -3,6 +3,7 @@ package WaterPhysics.ui;
 import WaterPhysics.Simulation;
 import WaterPhysics.ui.widget.UIWidget;
 import WaterPhysics.ui.widget.BirdsEyeWidget;
+import WaterPhysics.ui.widget.IsometricWidget;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -61,7 +62,7 @@ public class UI implements MouseListener {
 
 		addWidget(new BirdsEyeWidget(0, 0, CANVAS_WIDTH * 3 / 8,
 		          CANVAS_HEIGHT / 2, this));
-		addWidget(new BirdsEyeWidget(CANVAS_WIDTH * 3 / 8, 0,
+		addWidget(new IsometricWidget(CANVAS_WIDTH * 3 / 8, 0,
 		          CANVAS_WIDTH * 5 / 8, CANVAS_HEIGHT, this));
 		addWidget(new BirdsEyeWidget(0, CANVAS_HEIGHT / 2,
 		          CANVAS_WIDTH * 3 / 8, CANVAS_HEIGHT / 2, this));
