@@ -53,8 +53,6 @@ public class BirdsEyeWidget extends UIWidget {
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("BirdsEyeWidget clicked!");
-
 		int x = (e.getX() - displayX) / ((int) displayScale);
 		int y = (e.getY() - displayY) / ((int) displayScale);
 
