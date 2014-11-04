@@ -21,12 +21,12 @@ public class BirdsEyeWidget extends UIWidget {
 	                      UI parent) {
 		super(x, y, width, height, parent);
 
-		// find aspect ratios for simulation, display
+		// find aspect ratios for simulation, widget
 		double simAR = 1d * sim.getHeight() / sim.getWidth();
-		double dispAR = 1d * height / width;
+		double widgAR = 1d * height / width;
 
 		// set the scale for the display to fit in the widget
-		if (simAR > dispAR) {
+		if (simAR > widgAR) {
 			// simulation is skinny
 			displayScale = 1d * height / sim.getHeight();
 
