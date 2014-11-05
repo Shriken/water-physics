@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 import java.awt.Canvas;
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Dimension;
 import java.awt.image.BufferStrategy;
 import java.awt.event.MouseListener;
@@ -95,7 +95,7 @@ public class UI implements MouseListener {
 	public void render() {
 		// get draw graphics
 		BufferStrategy bs = screen.getBufferStrategy();
-		Graphics g = bs.getDrawGraphics();
+		Graphics2D g = (Graphics2D) bs.getDrawGraphics();
 
 		// draw each widget
 		for (UIWidget widget : widgets) {

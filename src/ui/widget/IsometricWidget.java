@@ -4,7 +4,8 @@ import WaterPhysics.Simulation;
 import WaterPhysics.ui.UI;
 
 import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Line2D;
 import java.awt.event.MouseEvent;
 
 public class IsometricWidget extends UIWidget {
@@ -52,29 +53,34 @@ public class IsometricWidget extends UIWidget {
 		System.out.println(displayScale);
 	}
 
-	public void render(Graphics g) {
+	public void render(Graphics2D g) {
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, width, height);
 
 		g.setColor(Color.BLACK);
 
-		int[][][] points = new int[sim.getHeight()][sim.getWidth()][2];
+		double[][][] points = new double[sim.getHeight()][sim.getWidth()]
+		                                [2];
 
 		for (int i = 0; i < sim.getHeight(); i++) {
 			for (int j = 0; j < sim.getWidth(); j++) {
-				points[i][j] = isoPoint(j, i, (int) sim.getZ(i, j));
+				points[i][j] = isoPoint(j, i, sim.getZ(i, j));
 			}
 		}
 
 		for (int i = 0; i < sim.getHeight(); i++) {
 			for (int j = 0; j < sim.getWidth(); j++) {
 				if (i < sim.getHeight() - 1) {
-					g.drawLine(points[i][j][0], points[i][j][1],
-					           points[i+1][j][0], points[i+1][j][1]);
+					g.draw(new Line2D.Double(points[i][j][0],
+					                         points[i][j][1],
+					                         points[i+1][j][0],
+					                         points[i+1][j][1]));
 				}
 				if (j < sim.getWidth() - 1) {
-					g.drawLine(points[i][j][0], points[i][j][1],
-					           points[i][j+1][0], points[i][j+1][1]);
+					g.draw(new Line2D.Double(points[i][j][0],
+					                         points[i][j][1],
+					                         points[i][j+1][0],
+					                         points[i][j+1][1]));
 				}
 			}
 		}
@@ -83,22 +89,22 @@ public class IsometricWidget extends UIWidget {
 	}
 
 	// convert a point from the sim to an isometric point in the widget
-	private int[] isoPoint(int x, int y, int z) {
-		int[] newPoint = new int[2];
+	private double[] isoPoint(double x, double y, double z) {
+		double[] newPoint = new double[2];
 
-		x -= sim.getWidth() / 2;
-		y -= sim.getHeight() / 2;
+		x -= sim.getWidth() / 2d;
+		y -= sim.getHeight() / 2d;
 
-		newPoint[0] = (int) (displayScale * (y - x) / 2);
-		newPoint[1] = (int) (displayScale * ((x + y) * ASPECT_RATIO / 2) - z);
+		newPoint[0] = displayScale * (y - x) / 2;
+		newPoint[1] = displayScale * ((x + y) * ASPECT_RATIO / 2) - z;
 
-		newPoint[0] += displayX + displayWidth  / 2;
-		newPoint[1] += displayY + displayHeight / 2;
+		newPoint[0] += displayX + displayWidth  / 2.;
+		newPoint[1] += displayY + displayHeight / 2.;
 
 		return newPoint;
 	}
 
-	private int[] isoPoint(int[] coords) {
+	private double[] isoPoint(double[] coords) {
 		return isoPoint(coords[0], coords[1], coords[2]);
 	}
 
