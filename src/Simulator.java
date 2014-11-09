@@ -50,7 +50,7 @@ public class Simulator {
 
 	public void processEvent(UIEvent e) {
 		if (e.eventType.equals("height-update")) {
-			sim.setZ(e.iargs[0], e.iargs[1], 1000);
+			sim.setZ(e.iargs[0], e.iargs[1], 100);
 		}
 	}
 
