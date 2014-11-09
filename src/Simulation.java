@@ -10,12 +10,12 @@ public class Simulation {
 	// multiplier for height determination by flow
 	private static double HEIGHT_F_CONST = 1;
 
-	private final int width, height;
+	protected final int width, height;
 	private double[][][] flows;
 	private double[][] heights;
 
 	public Simulation() {
-		this(20, 20);
+		this(100, 100);
 	}
 
 	public Simulation(int width, int height) {

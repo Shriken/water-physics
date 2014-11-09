@@ -13,7 +13,7 @@ public class Simulator {
 	boolean running;
 
 	public Simulator() {
-		sim = new Simulation();
+		sim = new RainSimulation(60);
 		ui = new UI(sim);
 	}
 
