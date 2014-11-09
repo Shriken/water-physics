@@ -54,7 +54,7 @@ public class Simulation {
 						newFlows[i-1][j][1] += flowDiff / 4 *FLOW_M_CONST;
 						newFlows[i-1][j][3] += flowDiff / 4 *FLOW_M_CONST;
 					}
-				} //else newFlows[i][j][2] += flows[i][j][0];
+				}
 				if (j < width - 2) {
 					double flowDiff = flows[i][j][1] - flows[i][j+1][3];
 					if (flowDiff > 0) {
@@ -62,7 +62,7 @@ public class Simulation {
 						newFlows[i][j+1][2] += flowDiff / 4 *FLOW_M_CONST;
 						newFlows[i][j+1][0] += flowDiff / 4 *FLOW_M_CONST;
 					}
-				} //else newFlows[i][j][3] += flows[i][j][1];
+				}
 				if (i < height - 2) {
 					double flowDiff = flows[i][j][2] - flows[i+1][j][0];
 					if (flowDiff > 0) {
@@ -70,7 +70,7 @@ public class Simulation {
 						newFlows[i+1][j][1] += flowDiff / 4 *FLOW_M_CONST;
 						newFlows[i+1][j][3] += flowDiff / 4 *FLOW_M_CONST;
 					}
-				} //else newFlows[i][j][0] += flows[i][j][2];
+				}
 				if (0 < j) {
 					double flowDiff = flows[i][j][3] - flows[i][j-1][1];
 					if (flowDiff > 0) {
@@ -78,7 +78,7 @@ public class Simulation {
 						newFlows[i][j-1][2] += flowDiff / 4 *FLOW_M_CONST;
 						newFlows[i][j-1][0] += flowDiff / 4 *FLOW_M_CONST;
 					}
-				} //else newFlows[i][j][1] += flows[i][j][3];
+				}
 
 				// update flow rates based on height differentials
 				if (0 < i) {
