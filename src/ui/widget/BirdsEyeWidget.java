@@ -55,8 +55,8 @@ public class BirdsEyeWidget extends UIWidget {
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		int x = (e.getX() - displayX) / ((int) displayScale);
-		int y = (e.getY() - displayY) / ((int) displayScale);
+		int x = (int) ((e.getX() - displayX) / displayScale);
+		int y = (int) ((e.getY() - displayY) / displayScale);
 
 		UIEvent uie = new UIEvent("height-update", new int[]{x,y});
 		parent.addEvent(uie);
